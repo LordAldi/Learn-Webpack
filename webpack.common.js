@@ -14,29 +14,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Inject css to DOM
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
-      },
-      {
         test: /\.html$/,
         use: ["html-loader"],
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "img",
-          },
-        },
+        type: "asset/resource",
       },
     ],
   },
